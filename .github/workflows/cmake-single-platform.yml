@@ -18,3 +18,4 @@ jobs:
         run: cmake --build build --target test && cmake --build build --target test -- ARGS=--verbose && build/check
       - name: Artefacts
         run: cd build && cpack -G DEB
+      - run: pwd
