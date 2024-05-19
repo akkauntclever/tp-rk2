@@ -14,7 +14,7 @@ jobs:
       - run: git clone https://github.com/google/googletest third-party/gtest 
       - name: Build
         run: cmake -H. -B build && cmake --build build
-
       - name: Test
         run: cmake --build build --target test && cmake --build build --target test -- ARGS=--verbose && build/check
-    
+      - name: Artefacts
+        run: cd build && cpack -G DEB && cpack -G RPM
