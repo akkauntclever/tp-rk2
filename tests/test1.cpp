@@ -2,6 +2,16 @@
 
 #include <gtest/gtest.h>
 
-TEST(Account, GetBalance) {
+#include <string>
+
+TEST(PolicyBasedDesign01, SmartPtr) {
+    EXPECT_EQ(0, 0);
+}
+
+TEST(PolicyBasedDesign, PolicyBasedDesign_02) {
+    EXPECT_EQ(0, 0);
+}
+
+TEST(PolicyBasedDesign, PolicyBasedDesign_10) {
     EXPECT_EQ(0, 0);
 }

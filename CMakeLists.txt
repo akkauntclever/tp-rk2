@@ -5,6 +5,13 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 project(PolicyBasedDesign)
 
+set(PRINT_VERSION_PATCH 0)
+set(PRINT_VERSION_MINOR 1)
+set(PRINT_VERSION_MAJOR 0)
+set(PRINT_VERSION_TWEAK 0)
+set(PRINT_VERSION ${PRINT_VERSION_MAJOR}.\${PRINT_VERSION_MINOR}.\${PRINT_VERSION_PATCH}.\${PRINT_VERSION_TWEAK})
+set(PRINT_VERSION_STRING "v\${PRINT_VERSION}")
+
 add_executable(PolicyBasedDesign PolicyBasedDesign.cpp Program.cpp)
 
 include_directories(
@@ -21,3 +28,6 @@ if(BUILD_TESTS)
   target_link_libraries(check gtest_main)
   add_test(NAME check COMMAND check)
 endif()
+
+install(TARGETS PolicyBasedDesign RUNTIME DESTINATION bin)
+include(CPackConfig.cmake)
