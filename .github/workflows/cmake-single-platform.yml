@@ -16,5 +16,5 @@ jobs:
         run: cmake -H. -B build && cmake --build build
 
       - name: Test
-        run: cmake --build build --target test
-      #   run: cd banking && git submodule update --init --recursive third-party/gtest && cmake -H. -B build -DBUILD_TESTS=ON && cmake --build build --target test
+        run: cmake --build build --target test && cmake --build build --target test -- ARGS=--verbose && build/check
+    
