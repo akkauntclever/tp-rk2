@@ -20,5 +20,3 @@ jobs:
         run: cd build && cpack -G "TGZ"
       - name: Artefacts (DEB)
         run: cd build && cpack -G DEB
-      - name: Artefacts (RPM)
-        run: cd build && cpack -G RPM
