@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: load_repository
         uses: actions/checkout@v4
-      - run: rm -r third-party/gtest && git submodule add https://github.com/google/googletest third-party/gtest 
+      - run: git clone https://github.com/google/googletest third-party/gtest 
       - name: Build
         run: cmake -H. -B build && cmake --build build
 
