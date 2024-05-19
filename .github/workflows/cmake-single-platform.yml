@@ -11,10 +11,10 @@ jobs:
     steps:
       - name: load_repository
         uses: actions/checkout@v4
-      - run: git submodule add https://github.com/google/googletest third-party/gtest 
+      - run: git clone https://github.com/google/googletest third-party/gtest 
       - name: Build
         run: cmake -H. -B build && cmake --build build
 
-      # - name: Test
-      #   run: cmake --build build --target test
+      - name: Test
+        run: cmake --build build --target test
       #   run: cd banking && git submodule update --init --recursive third-party/gtest && cmake -H. -B build -DBUILD_TESTS=ON && cmake --build build --target test
